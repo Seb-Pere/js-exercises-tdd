@@ -4,13 +4,9 @@ function removeVowels(word) {
   var result = [];
 
   characters.forEach(function(character) {
-    if (
-      character === "a" ||
-      character === "o" ||
-      character === "i" ||
-      character === "e" ||
-      character === "u"
-    ) {
+    const vowels = ['a', 'o', 'i', 'e', 'u', 'y']
+    
+    if (!vowels.includes(character.toLowerCase())) {
       result.push(character);
     } else {
       result.push("_");
@@ -21,11 +17,10 @@ function removeVowels(word) {
 }
 
 module.exports = removeVowels;
-
 /*
   Let's trace this piece of code - what is the value of result with this input
-
+  
   var result = removeVowels('samuel');
-
+  
   what is the value of result?
 */
